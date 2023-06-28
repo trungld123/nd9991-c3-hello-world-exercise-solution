@@ -1,14 +1,9 @@
 version: 2.1
+
 orbs:
   # Add any orbs you need here
-jobs:
-  myjob1:
-    docker:
-      - image:
-    steps:
-      - checkout
-      - run: echo "hello world"
 
+jobs:
   create_infrastructure:
     docker:
       - image: amazon/aws-cli
@@ -25,5 +20,4 @@ jobs:
 workflows:
   myWorkflow:
     jobs:
-      - myjob1
       - create_infrastructure
